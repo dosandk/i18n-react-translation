@@ -1,0 +1,26 @@
+.button {
+  width: auto;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 8px;
+  transition: opacity 1s;
+  cursor: pointer;
+
+  .span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &.disabled {
+    background-color: grey;
+    cursor: default;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
