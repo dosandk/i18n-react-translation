@@ -18,6 +18,9 @@ module.exports = {
       '/src': path.join(__dirname, '../src')
     }
   },
+  watchOptions: {
+    ignored: /assets\/locales/
+  },
   optimization: {
     splitChunks: {
       chunks: 'all'
@@ -43,6 +46,7 @@ module.exports = {
     ]
   },
   plugins: [
+    // TODO: add port for i18next-server
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),

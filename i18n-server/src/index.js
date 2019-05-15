@@ -8,7 +8,8 @@ import path from 'path';
 import cors from 'cors';
 
 const app = express();
-const port = 3000;
+// TODO: use .env for i18n-server port!
+const port = 3001;
 
 i18next
   .use(BackEnd)
@@ -16,11 +17,9 @@ i18next
   .init(
     {
       backend: {
-        //loadPath: path.resolve(__dirname, '../locales/{{lng}}/{{ns}}.json'),
-        addPath: path.resolve(__dirname, '../locales/{{lng}}/{{ns}}')
+        addPath: path.resolve(__dirname, '../../src/assets/locales/{{lng}}/translation.json')
       },
       fallbackLng: 'en',
-      preload: ["en", "ru"],
       saveMissing: true,
       debug: true,
       lng: 'en',
@@ -34,7 +33,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(morgan('dev'));
 app.use(handle(i18next));
 
-app.post("/locales/add/:lng/:ns", missingKeyHandler(i18next));
+app.post('/locales/add/:lng/:ns', missingKeyHandler(i18next));
 
 app.listen(port, error => {
   if (error) {

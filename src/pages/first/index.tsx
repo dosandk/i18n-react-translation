@@ -1,17 +1,16 @@
 import React from 'react';
-import {withTranslation} from "react-i18next";
+import H from '../../components/heading';
+import P from '../../components/paragraph';
 
-const FirstPage = ({ t }: { t: any }) => {
+const FirstPage = () => {
   return (
     <div>
-      <h1>First Page</h1>
+      <H level="one">First Page</H>
       <div>
-        { t('first|foo') }
-        { t('asdasd') }
+        <P>some description</P>
       </div>
     </div>
   );
 };
 
-// export default FirstPage;
-export default withTranslation('first')(FirstPage);
+export default FirstPage;

@@ -1,26 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import classNames from 'classnames/bind';
 import { withTranslation } from 'react-i18next';
 
-import Button from '../../components/button';
+import P from '../../components/paragraph';
+import H from '../../components/heading';
 
 import styles from './index.scss';
 
-const cx = classNames.bind(styles);
-
 const PageNotFound = ({ t }: any) => {
   return (
-    <div className={cx('page-not-found')}>
-      <h1>{t('Sorry!')}</h1>
-      <p className="body text-center">
-        {t('The page you are looking for was moved, deleted, renamed or might never existed.')}
-      </p>
+    <div className={styles['page-not-found']}>
+      <H level="one">Sorry!</H>
+      <P className="body text-center">
+        The page you are looking for was moved, deleted, renamed or might never existed.
+      </P>
       <NavLink to="/">
-        <Button caption={t('HOME PAGE')} classN="button-submit" />
+        <button>{t('HOME PAGE')}</button>
       </NavLink>
     </div>
   );
 };
 
-export default withTranslation('notFound')(PageNotFound);
+export default withTranslation()(PageNotFound);

@@ -13,6 +13,14 @@ module.exports = merge(common, {
     compress: true,
     publicPath: '/',
     contentBase: path.resolve(__dirname, '../dist'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/i18n-server': {
+        target: 'http://localhost:3001',
+        secure: false,
+        pathRewrite: {'^/i18n-server' : ''},
+        logLevel: 'debug'
+      }
+    }
   }
 });
