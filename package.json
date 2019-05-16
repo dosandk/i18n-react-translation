@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "develop": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.js",
+    "develop": "npm-run-all --parallel start:client start:i18n-server",
+    "start:client": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.js",
+    "start:i18n-server": "cd src/i18n-server && npm run start",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --config ./webpack/webpack.prod.js"
   },
   "repository": {
@@ -63,6 +65,7 @@
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "npm-run-all": "^4.1.5"
   }
 }

@@ -38,7 +38,7 @@ module.exports = {
         test: /\.(js|jsx|tsx|ts)?$/,
         enforce: 'pre',
         use: jsLoaders,
-        exclude: [/(node_modules)/]
+        exclude: [/(node_modules)/, /(i18n-server)/]
       },
       {
         test: /\.scss$/,

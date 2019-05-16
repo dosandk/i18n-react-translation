@@ -1,4 +1,4 @@
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -17,7 +17,7 @@ i18next
   .init(
     {
       backend: {
-        addPath: path.resolve(__dirname, '../../src/assets/locales/{{lng}}/translation.json')
+        addPath: path.resolve(__dirname, '../../assets/locales/{{lng}}/translation.json')
       },
       fallbackLng: 'en',
       saveMissing: true,
