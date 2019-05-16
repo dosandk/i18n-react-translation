@@ -1,3 +1,5 @@
+require('dotenv/config');
+
 const webpack = require('webpack');
 const path = require('path');
 const jsLoaders = require('./loaders/js-loaders');
@@ -46,7 +48,6 @@ module.exports = {
     ]
   },
   plugins: [
-    // TODO: add port for i18next-server
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),

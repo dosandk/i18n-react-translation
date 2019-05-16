@@ -1,3 +1,5 @@
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+
 import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
@@ -8,8 +10,6 @@ import path from 'path';
 import cors from 'cors';
 
 const app = express();
-// TODO: use .env for i18n-server port!
-const port = 3001;
 
 i18next
   .use(BackEnd)
@@ -35,10 +35,10 @@ app.use(handle(i18next));
 
 app.post('/locales/add/:lng/:ns', missingKeyHandler(i18next));
 
-app.listen(port, error => {
+app.listen(process.env.I18N_SERVER_PORT, error => {
   if (error) {
     console.error(`Error: ${error}`);
   }
 
-  console.log(`Server listening on port ${port}`);
+  console.log(`Server listening on port ${process.env.I18N_SERVER_PORT}`);
 });

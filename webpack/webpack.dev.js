@@ -16,7 +16,7 @@ module.exports = merge(common, {
     historyApiFallback: true,
     proxy: {
       '/i18n-server': {
-        target: 'http://localhost:3001',
+        target: `http://localhost:${process.env.I18N_SERVER_PORT}`,
         secure: false,
         pathRewrite: {'^/i18n-server' : ''},
         logLevel: 'debug'
