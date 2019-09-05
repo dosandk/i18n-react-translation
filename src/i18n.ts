@@ -2,8 +2,8 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LngDetector from 'i18next-browser-languagedetector';
 
-import en from './assets/locales/en/translation';
-import uk from './assets/locales/uk/translation';
+import en from './assets/locales/en/translation.json';
+import uk from './assets/locales/uk/translation.json';
 
 i18n
   .use(LngDetector)
