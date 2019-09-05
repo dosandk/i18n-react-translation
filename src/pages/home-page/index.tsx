@@ -1,9 +1,23 @@
 import React from 'react';
+import P from "../../components/paragraph";
+import H from "../../components/heading";
+import {withTranslation} from "react-i18next";
 
-const HomePage = () => {
+const HomePage = ({t}: any) => {
   return (
-    <h1>Home Page</h1>
+    <>
+      <H level="one">{t('Home Page')}</H>
+      <ul>
+        <li>
+          <P>{t('This is a table')}</P>
+        </li>
+        <li>
+          <P>{t('This is an apple')}</P>
+        </li>
+      </ul>
+    </>
   );
 };
 
-export default HomePage;
+export default withTranslation('homePage')(HomePage);
+

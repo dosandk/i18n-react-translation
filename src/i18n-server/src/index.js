@@ -17,7 +17,7 @@ i18next
   .init(
     {
       backend: {
-        addPath: path.resolve(__dirname, '../../assets/locales/{{lng}}/translation.json')
+        addPath: path.resolve(__dirname, '../../assets/locales/{{lng}}/translation.missed.json')
       },
       fallbackLng: 'en',
       saveMissing: true,
