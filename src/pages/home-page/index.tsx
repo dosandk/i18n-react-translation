@@ -14,6 +14,9 @@ const HomePage = ({t}: any) => {
         <li>
           <P>{t('This is an apple')}</P>
         </li>
+        <li>
+          <P>{t('Sun')}</P>
+        </li>
       </ul>
     </>
   );
