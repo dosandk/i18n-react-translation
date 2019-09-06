@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
+    "start": "npm run build && node server.js",
     "develop": "npm-run-all --parallel start:client start:i18n-server",
     "start:client": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.js",
     "start:i18n-server": "cd src/i18n-server && npm run start",
@@ -19,6 +20,7 @@
   "homepage": "",
   "dependencies": {
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
     "i18next": "^15.0.7",
     "i18next-browser-languagedetector": "^3.0.1",
     "react": "^16.8.3",
@@ -26,9 +28,7 @@
     "react-i18next": "^10.6.0",
     "react-loader-spinner": "^2.3.0",
     "react-preloaders": "^2.1.4",
-    "react-router-dom": "^4.3.1"
-  },
-  "devDependencies": {
+    "react-router-dom": "^4.3.1",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
