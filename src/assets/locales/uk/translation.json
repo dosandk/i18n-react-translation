@@ -1,9 +1,8 @@
 {
     "homePage": {
         "Home Page": "Домашняя страница",
-        "This is a table": "Это стол - на нем едят",
-        "This is an apple": "Это яблоко - на нем сидят",
-        "Sun": "Сонечко",
-        "foo": "123123"
+        "This is a table": "Це стіл",
+        "This is an apple": "Це яблоко",
+        "Sun": ""
     }
 }
